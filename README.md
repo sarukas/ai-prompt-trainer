@@ -15,7 +15,7 @@ The repository contains a carefully crafted `CLAUDE.md` — a project instructio
 
 ## How to use it
 
-1. Clone this repo and open it as a workspace in [Ally](https://github.com/sarukas/ally) (or any Claude Code-compatible environment)
+1. Clone this repo and open it as a workspace in any Claude Code-compatible coding agent or environment
 2. Start a conversation — ask Claude anything
 3. Claude will answer your question **and** give you specific, concise feedback on how to improve that exact prompt next time
 
