@@ -1,7 +1,7 @@
 # Prompting Techniques Library (Research-Backed)
 
 > Load this file when teaching or recommending specific techniques.
-> Reference: `techniques-library.md`
+> Reference: `docs/techniques-library.md`
 
 ## Core Techniques — High Evidence
 

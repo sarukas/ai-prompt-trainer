@@ -1,36 +1,101 @@
 # AI Prompt Trainer
 
-This is a special repository designed to make Claude a better prompting coach.
-
-## What makes it special
-
-The repository contains a carefully crafted `CLAUDE.md` — a project instruction file that Claude reads automatically when working in this workspace. It transforms Claude from a general assistant into a dedicated **prompting trainer**: one that answers your questions first, then gives you targeted feedback on how your prompt could have been sharper, more precise, or more powerful.
+A stand-alone coaching workspace that turns Claude (or any capable AI) into a dedicated prompting trainer: it answers your question first, then gives you targeted, concise feedback on how that specific prompt could have been sharper.
 
 ## What's inside
 
-| File | Purpose |
-|------|---------|
-| `CLAUDE.md` | The core instruction set — defines Claude's training behaviour, techniques library, and coaching principles |
-| `Prompting-Exercises-Complete-Guide.md` | 25 hands-on exercises covering everything from basic Chain-of-Thought to 2025–2026 frontier techniques (AGoT, CISC, DR-CoT, Adversarial CoT) |
+```
+├── CLAUDE.md                          # Trainer behavior instructions (system prompt)
+│
+├── docs/
+│   ├── principles.md                  # 5 teaching principles behind the trainer
+│   ├── techniques-library.md          # Research-backed techniques with 2026 nuances and citations
+│   └── anti-patterns-2026.md         # What not to do on modern frontier models
+│
+├── exercises/
+│   ├── 00-learning-path.md            # Curriculum map — start here
+│   ├── foundations/                   # Exercises 1–8: AI as a thinking partner
+│   ├── techniques/                    # Exercises 9–18: Core prompting methods
+│   └── advanced/                      # Exercises 19–25: 2025–2026 frontier techniques
+│
+└── deployment/
+    ├── claude-code.md                 # Claude Code (full tool support, recommended)
+    ├── claude-ai.md                   # Claude.ai Projects
+    ├── api.md                         # Anthropic API
+    └── custom-gpt.md                  # OpenAI Custom GPT
+```
 
-## How to use it
+---
 
-1. Clone this repo and open it as a workspace in any Claude Code-compatible coding agent or environment
-2. Start a conversation — ask Claude anything
-3. Claude will answer your question **and** give you specific, concise feedback on how to improve that exact prompt next time
+## Quick start
+
+### Claude Code (recommended)
+```bash
+git clone <repo-url>
+# Open the folder in Claude Code — CLAUDE.md loads automatically
+# Start asking questions
+```
+
+### Claude.ai
+See `deployment/claude-ai.md` — copy the adapted system prompt into a Project.
+
+### Anthropic API
+See `deployment/api.md` — pass `CLAUDE.md` as the system prompt with prompt caching.
+
+### Custom GPT
+See `deployment/custom-gpt.md` — paste the adapted instructions and upload the docs as knowledge files.
+
+---
+
+## Where to start learning
+
+Open `exercises/00-learning-path.md` for the full curriculum with difficulty ratings (⭐–⭐⭐⭐⭐⭐), time estimates, prerequisites, and suggested paths.
+
+**Quick-start paths:**
+
+| Goal | Path |
+|------|------|
+| New to prompting | Exercises 1 → 4 → 9 → 12 → 13 |
+| Daily AI user wanting more precision | Exercises 13 → 15 → 17 → 18 → 22 |
+| High-stakes decisions with AI | Exercises 19 → 21 → 22 → 25 |
+| One quick win right now | Exercise 23 — Prompt Repetition (20 min, no prerequisites) |
+
+Before starting any path, read `docs/anti-patterns-2026.md` — knowing what *not* to do on modern models saves significant time.
+
+---
 
 ## Techniques covered
 
-The library spans research-backed techniques from 2022 through 2026, including what's still effective, what's become obsolete, and what's newly powerful:
+**Core (2022–2024):** Zero-shot CoT · Few-shot · Role prompting · Reverse prompting · Tree of Thought · Step-back prompting · Self-consistency · Closed-context prompting
 
-- Zero-shot & Few-shot prompting
-- Chain of Thought, Tree of Thought, Step-back prompting
-- Role prompting, Reverse prompting, Iteration & refinement
-- **2025–2026:** Adaptive Graph of Thoughts (AGoT), Confidence-Informed Self-Consistency (CISC), Prompt Repetition, Adversarial CoT, DR-CoT
-- Techniques to avoid on modern frontier models
+**Frontier (2025–2026):** Adaptive Graph of Thoughts (AGoT) · Confidence-Informed Self-Consistency (CISC) · Prompt Repetition · Adversarial CoT · DR-CoT
+
+**Superseded:** Techniques confirmed ineffective or counterproductive on GPT-4o+, Claude 3.5+, and equivalent frontier models
+
+All techniques are evidence-backed with citations. See `docs/techniques-library.md`.
+
+---
 
 ## Philosophy
 
 > More context → fewer, better associations → more precise output for your circumstances.
 
-The best prompts don't just ask questions — they constrain, prioritise, and give Claude the right lens to see your problem clearly. This workspace teaches you to do exactly that.
+The best prompts don't just ask questions — they constrain, prioritise, and give the model the right lens to see your problem clearly. This workspace teaches you to do exactly that.
+
+---
+
+## Contributing
+
+To add a new exercise, follow the structure of any existing exercise file:
+
+```markdown
+## Exercise N: Title
+
+### Theoretical background
+### Student task
+### Examples
+### Gotchas
+### Key takeaways
+```
+
+Place it in the appropriate tier folder (`foundations/`, `techniques/`, or `advanced/`), add it to `exercises/00-learning-path.md`, and update the techniques library if it covers a new technique.
